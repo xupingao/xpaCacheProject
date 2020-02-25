@@ -1,0 +1,14 @@
+syntax="proto3";
+
+package xpacachepb;
+
+message Request{
+    string key=1;
+    string group=2;
+}
+message Response{
+    bytes value=1;
+}
+service GroupCache{
+    rpc Get(Request) returns (Response);
+}
